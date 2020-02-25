@@ -17,6 +17,9 @@ defmodule Unicode.GuardsTest do
     assert Guards.lower("a") == :lower
     assert Guards.digit("3") == :digit
     assert Guards.whitespace(" ") == :whitespace
+    assert Guards.whitespace("\n") == :whitespace
+    assert Guards.whitespace("\t") == :whitespace
+    assert Guards.whitespace("\r") == :whitespace
     assert Guards.currency("$") == :currency
   end
 end

@@ -64,7 +64,21 @@ defmodule Unicode.Guards do
   Guards whether a UTF8 codepoint is a whitespace symbol
   character.
 
+  This includes the Unicode set `Zs` plus the characters in the range `0x9`-`0xd`
+  which incudes tab, newline and carriage return.
+
   """
-  defguard is_whitespace(codepoint) when is_integer(codepoint) and match?(codepoint, "[[:Zs:]]")
+  defguard is_whitespace(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[\u0009-\u000d][:Zs:]]")
+
+    @doc """
+  Guards whether a UTF8 codepoint is a unicode separator symbol
+  character.
+
+  This includes the Unicode set `Zs` plus the characters.
+
+  """
+  defguard is_separator(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:Zs:]]")
 
 end
