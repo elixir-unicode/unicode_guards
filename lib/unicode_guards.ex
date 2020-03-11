@@ -71,7 +71,7 @@ defmodule Unicode.Guards do
   defguard is_whitespace(codepoint)
     when is_integer(codepoint) and match?(codepoint, "[[\u0009-\u000d][:Zs:]]")
 
-    @doc """
+  @doc """
   Guards whether a UTF8 codepoint is a unicode separator symbol
   character.
 
@@ -80,5 +80,68 @@ defmodule Unicode.Guards do
   """
   defguard is_separator(codepoint)
     when is_integer(codepoint) and match?(codepoint, "[[:Zs:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a unicode quote symbol
+  character.
+
+  This includes the Unicode set `Pi`, `Pf` and
+  other characters documents in this [Wikpedia article](https://en.wikipedia.org/wiki/Quotation_mark).
+
+  See also `Unicode.Category.QuoteMarks`.
+
+  """
+  defguard is_quote_mark(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMark:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a unicode left quote symbol
+  character.
+
+  See also `Unicode.Category.QuoteMarks`.
+
+  """
+  defguard is_quote_mark_left(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkLeft:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a unicode right quote symbol
+  character.
+
+  See also `Unicode.Category.QuoteMarks`.
+
+  """
+  defguard is_quote_mark_right(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkRight:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a unicode quote symbol that can
+  be used either left or right.
+
+  See also `Unicode.Category.QuoteMarks`.
+
+  """
+  defguard is_quote_mark_ambidextrous(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkAmbidextrous:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a unicode quote symbol that is
+  considered a single quote.
+
+  See also `Unicode.Category.QuoteMarks`.
+
+  """
+  defguard is_quote_mark_single(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkSingle:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a unicode quote symbol that is
+  considered a single quote.
+
+  See also `Unicode.Category.QuoteMarks`.
+
+  """
+  defguard is_quote_mark_double(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkDouble:]]")
 
 end

@@ -22,4 +22,26 @@ defmodule Unicode.GuardsTest do
     assert Guards.whitespace("\r") == :whitespace
     assert Guards.currency("$") == :currency
   end
+
+  test "quote mark guards" do
+    defmodule Quotes do
+      import Unicode.Guards
+
+      def quote_mark(<< x :: utf8, _rest :: binary >>) when is_quote_mark(x), do: :quote_mark
+      def single(<< x :: utf8, _rest :: binary >>) when is_quote_mark_single(x), do: :single
+      def double(<< x :: utf8, _rest :: binary >>) when is_quote_mark_double(x), do: :double
+      def left(<< x :: utf8, _rest :: binary >>) when is_quote_mark_left(x), do: :left
+      def right(<< x :: utf8, _rest :: binary >>) when is_quote_mark_right(x), do: :right
+      def ambidextrous(<< x :: utf8, _rest :: binary >>) when is_quote_mark_ambidextrous(x), do: :ambidextrous
+
+    end
+
+    assert Quotes.quote_mark("⠴") == :quote_mark
+    assert Quotes.single("\'") == :single
+    assert Quotes.double("\"") == :double
+    assert Quotes.left("﹁") == :left
+    assert Quotes.right("﹂") == :right
+    assert Quotes.ambidextrous("\"") == :ambidextrous
+
+  end
 end

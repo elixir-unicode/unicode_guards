@@ -29,7 +29,7 @@ The package can be installed by adding `unicode_guards` to your list of dependen
 ```elixir
 def deps do
   [
-    {:unicode_guards, "~> 0.1.0"}
+    {:unicode_guards, "~> 0.2.0"}
   ]
 end
 ```
