@@ -144,4 +144,15 @@ defmodule Unicode.Guards do
   defguard is_quote_mark_double(codepoint)
     when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkDouble:]]")
 
+  @doc """
+  Guards whether a UTF8 codepoint is a printable.
+
+  The definition of what is printable is the same as
+  used by `String.printable?/1`
+
+  """
+  defguard is_printable(codepoint)
+    when is_integer(codepoint) and match?(codepoint,
+      "[[\u0020-\u007e][\u0100-\u01FF][\u00A0..\uD7FF][\uE000-\uFFFD][\u10000-\u10FFFF]\n\r\t\v\b\f\e\d\a]")
+
 end
