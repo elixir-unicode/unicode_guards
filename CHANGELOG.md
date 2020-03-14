@@ -1,3 +1,12 @@
+# Changelog for Unicode Guards v0.3.0
+
+This is the changelog for Unicode Guards v0.3.0 released on March 14th, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
+
+## Enhancements
+
+* Add `is_printable/1` that uses the same semantics as `String.printable?/1`
+* Add `is_visible/1` that uses the Unicode set `[[:L:][:N:][:M:][:P:][:S:][:Zs:]]`
+
 # Changelog for Unicode Guards v0.2.0
 
 This is the changelog for Unicode Guards v0.2.0 released on March 11th, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
