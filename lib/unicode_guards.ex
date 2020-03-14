@@ -152,7 +152,19 @@ defmodule Unicode.Guards do
 
   """
   defguard is_printable(codepoint)
-    when is_integer(codepoint) and match?(codepoint,
-      "[[\u0020-\u007e][\u0100-\u01FF][\u00A0..\uD7FF][\uE000-\uFFFD][\u10000-\u10FFFF]\n\r\t\v\b\f\e\d\a]")
+    when is_integer(codepoint) and match?(codepoint, "[[:printable:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a visible.
+
+  The definition is a combination of `L`, `N`,
+  `M`, `P`, `S` and `Zs` categories.
+
+  This is the solution most commonly cited on stackexchange
+  although it has no standardization behind it.
+
+  """
+  defguard is_visible(codepoint)
+    when is_integer(codepoint) and match?(codepoint, "[[:visible:]]")
 
 end

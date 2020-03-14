@@ -44,4 +44,18 @@ defmodule Unicode.GuardsTest do
     assert Quotes.ambidextrous("\"") == :ambidextrous
 
   end
+
+  test "printable guards" do
+    defmodule Printable do
+      import Unicode.Guards
+
+      def printable(<< x :: utf8, _rest :: binary >>) when is_printable(x), do: :printable
+      def printable(_other), do: :not_printable
+
+    end
+
+    assert Printable.printable("a") == :printable
+    assert Printable.printable(<< 0 :: utf8 >>) == :not_printable
+
+  end
 end
