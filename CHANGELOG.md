@@ -1,3 +1,11 @@
+# Changelog for Unicode Guards v0.3.1
+
+This is the changelog for Unicode Guards v0.3.1 released on May 21st, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
+
+## Bug Fixes
+
+* Fix escape sequences in `is_whitespace/2` guard. Thanks to @nickdichev, closes #1
+
 # Changelog for Unicode Guards v0.3.0
 
 This is the changelog for Unicode Guards v0.3.0 released on March 14th, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
