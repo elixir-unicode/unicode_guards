@@ -59,7 +59,6 @@ defmodule Unicode.Guards do
   defguard is_currency_symbol(codepoint)
            when is_integer(codepoint) and match?(codepoint, "[[:Sc:]]")
 
-
   @doc """
   Guards whether a UTF8 codepoint is a whitespace symbol
   character.
@@ -69,7 +68,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_whitespace(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[\u0009-\u000d][:Zs:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[\\u0009-\\u000d][:Zs:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a unicode separator symbol
@@ -79,7 +78,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_separator(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:Zs:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:Zs:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a unicode quote symbol
@@ -92,7 +91,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_quote_mark(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMark:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:QuoteMark:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a unicode left quote symbol
@@ -102,7 +101,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_quote_mark_left(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkLeft:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkLeft:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a unicode right quote symbol
@@ -112,7 +111,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_quote_mark_right(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkRight:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkRight:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a unicode quote symbol that can
@@ -122,7 +121,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_quote_mark_ambidextrous(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkAmbidextrous:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkAmbidextrous:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a unicode quote symbol that is
@@ -132,7 +131,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_quote_mark_single(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkSingle:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkSingle:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a unicode quote symbol that is
@@ -142,7 +141,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_quote_mark_double(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkDouble:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:QuoteMarkDouble:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a printable.
@@ -152,7 +151,7 @@ defmodule Unicode.Guards do
 
   """
   defguard is_printable(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:printable:]]")
+           when is_integer(codepoint) and match?(codepoint, "[[:printable:]]")
 
   @doc """
   Guards whether a UTF8 codepoint is a visible.
@@ -165,6 +164,5 @@ defmodule Unicode.Guards do
 
   """
   defguard is_visible(codepoint)
-    when is_integer(codepoint) and match?(codepoint, "[[:visible:]]")
-
+           when is_integer(codepoint) and match?(codepoint, "[[:visible:]]")
 end
