@@ -1,3 +1,15 @@
+# Changelog for Unicode Guards v0.4.0
+
+This is the changelog for Unicode Guards v0.4.0 released on October 13th, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
+
+## Bug Fixes
+
+* Fix `ex_doc` dependency. Thanks to @nickdichev.
+
+## Enhancements
+
+* Add additional guards `is_graph?/1`, `is_blank?/1` and `is_print/1` that match the definitions for Unicode regexes.
+
 # Changelog for Unicode Guards v0.3.1
 
 This is the changelog for Unicode Guards v0.3.1 released on May 21st, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)

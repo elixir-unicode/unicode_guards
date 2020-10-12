@@ -9,6 +9,9 @@ defmodule Unicode.GuardsTest do
       def upper(<<x::utf8, _rest::binary>>) when is_upper(x), do: :upper
       def lower(<<x::utf8, _rest::binary>>) when is_lower(x), do: :lower
       def digit(<<x::utf8, _rest::binary>>) when is_digit(x), do: :digit
+      def blank(<<x::utf8, _rest::binary>>) when is_blank(x), do: :blank
+      def print(<<x::utf8, _rest::binary>>) when is_print(x), do: :print
+      def graph(<<x::utf8, _rest::binary>>) when is_graph(x), do: :graph
       def whitespace(<<x::utf8, _rest::binary>>) when is_whitespace(x), do: :whitespace
       def currency(<<x::utf8, _rest::binary>>) when is_currency_symbol(x), do: :currency
     end
@@ -21,6 +24,9 @@ defmodule Unicode.GuardsTest do
     assert Guards.whitespace("\t") == :whitespace
     assert Guards.whitespace("\r") == :whitespace
     assert Guards.currency("$") == :currency
+    assert Guards.blank(" ") == :blank
+    assert Guards.graph("X") == :graph
+    assert Guards.print(" ") == :print
   end
 
   test "quote mark guards" do

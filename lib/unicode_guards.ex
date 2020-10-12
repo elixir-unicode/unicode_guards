@@ -153,16 +153,43 @@ defmodule Unicode.Guards do
   defguard is_printable(codepoint)
            when is_integer(codepoint) and match?(codepoint, "[[:printable:]]")
 
-  @doc """
-  Guards whether a UTF8 codepoint is a visible.
 
-  The definition is a combination of `L`, `N`,
-  `M`, `P`, `S` and `Zs` categories.
-
-  This is the solution most commonly cited on stackexchange
-  although it has no standardization behind it.
-
-  """
+  @doc false
+  # Replaced by `is_graph/1`.
   defguard is_visible(codepoint)
            when is_integer(codepoint) and match?(codepoint, "[[:visible:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a graphic character.
+
+  This is the Unicode definition of those characters that
+  are visible. It is defined as those characters that are
+  non-space, non-control and non-surrogate.
+
+  """
+  defguard is_graph(codepoint)
+           when is_integer(codepoint) and match?(codepoint, "[[:graph:]]")
+
+  @doc """
+  Guards whether a UTF8 codepoint is a space character.
+
+  This is the Unicode definition of those characters that
+  horizontal space (space, non-breaking space etc) as well
+  as the horizontal tab character.
+
+  """
+  defguard is_blank(codepoint)
+           when is_integer(codepoint) and match?(codepoint, "[[:blank:]]")
+
+
+  @doc """
+  Guargs where a UTF8 codepoint is a printing character.
+
+  This is the Unicode definition which is a combination of the
+  `[:graph:]` set and the `[:blank:]` set.
+
+  """
+  defguard is_print(codepoint)
+           when is_integer(codepoint) and match?(codepoint, "[[:print:]]")
+
 end

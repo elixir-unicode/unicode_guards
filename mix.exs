@@ -1,7 +1,7 @@
 defmodule Unicode.Guards.MixProject do
   use Mix.Project
 
-  @version "0.3.1"
+  @version "0.4.0"
 
   def project do
     [
@@ -52,10 +52,10 @@ defmodule Unicode.Guards.MixProject do
 
   defp deps do
     [
-      {:unicode_set, "~> 0.5"},
+      {:unicode_set, "~> 0.11"},
       {:nimble_parsec, "~> 0.5", runtime: false},
       {:benchee, "~> 1.0", only: :dev},
-      {:ex_doc, "~> 0.19", runtime: false}
+      {:ex_doc, "~> 0.19", optional: true, runtime: false}
     ]
   end
 
