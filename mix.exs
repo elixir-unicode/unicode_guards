@@ -63,7 +63,8 @@ defmodule Unicode.Guards.MixProject do
     %{
       "GitHub" => "https://github.com/elixir-unicode/unicode_guards",
       "Readme" => "https://github.com/elixir-unicode/unicode_guards/blob/v#{@version}/README.md",
-      "Changelog" => "https://github.com/elixir-unicode/unicode_guards/blob/v#{@version}/CHANGELOG.md"
+      "Changelog" =>
+        "https://github.com/elixir-unicode/unicode_guards/blob/v#{@version}/CHANGELOG.md"
     }
   end
 
