@@ -55,7 +55,7 @@ defmodule Unicode.Guards.MixProject do
       {:unicode_set, "~> 0.5"},
       {:nimble_parsec, "~> 0.5", runtime: false},
       {:benchee, "~> 1.0", only: :dev},
-      {:ex_doc, "~> 0.19", only: [:dev, :test, :release], runtime: false}
+      {:ex_doc, "~> 0.19", runtime: false}
     ]
   end
 
