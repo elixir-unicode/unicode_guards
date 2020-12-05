@@ -1,3 +1,11 @@
+# Changelog for Unicode Guards v0.5.0
+
+This is the changelog for Unicode Guards v0.5.0 released on December 5th, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
+
+## Bug Fixes
+
+* Relax version requirement for `nimble_parsec` to allow `"~> 0.5 or ~> 1.0"`. Thanks to @@fireproofsocks.  Closes #3.
+
 # Changelog for Unicode Guards v0.4.0
 
 This is the changelog for Unicode Guards v0.4.0 released on October 13th, 2020.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
