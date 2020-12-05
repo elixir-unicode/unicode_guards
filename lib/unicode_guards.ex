@@ -153,7 +153,6 @@ defmodule Unicode.Guards do
   defguard is_printable(codepoint)
            when is_integer(codepoint) and match?(codepoint, "[[:printable:]]")
 
-
   @doc false
   # Replaced by `is_graph/1`.
   defguard is_visible(codepoint)
@@ -181,7 +180,6 @@ defmodule Unicode.Guards do
   defguard is_blank(codepoint)
            when is_integer(codepoint) and match?(codepoint, "[[:blank:]]")
 
-
   @doc """
   Guargs where a UTF8 codepoint is a printing character.
 
@@ -191,5 +189,4 @@ defmodule Unicode.Guards do
   """
   defguard is_print(codepoint)
            when is_integer(codepoint) and match?(codepoint, "[[:print:]]")
-
 end
