@@ -4,7 +4,7 @@
 
 This is the changelog for Unicode Guards v0.5.1 released on May 25th, 2021.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
 
-### Bug FIxes
+### Bug Fixes
 
 * Fix dependency configuration to mark `ex_doc` and `benchee` as optional. Thanks to @everettvody.
 
