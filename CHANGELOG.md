@@ -1,5 +1,13 @@
 # Changelog
 
+## Unicode Guards v1.0.0
+
+This is the changelog for Unicode Guards v1.0.0 released on September 14th, 2021.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
+
+### Enhancments
+
+* Update to use [Unicode 14](https://unicode.org/versions/Unicode14.0.0) release data.
+
 ## Unicode Guards v0.5.1
 
 This is the changelog for Unicode Guards v0.5.1 released on May 25th, 2021.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
