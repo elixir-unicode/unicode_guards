@@ -52,10 +52,11 @@ defmodule Unicode.Guards.MixProject do
 
   defp deps do
     [
-      {:unicode_set, "~> 0.5 or ~> 1.0"},
+      {:unicode_set, "~> 1.0"},
       {:nimble_parsec, "~> 0.5 or ~> 1.0", runtime: false},
       {:benchee, "~> 1.0", only: :dev, runtime: false, optional: true},
-      {:ex_doc, "~> 0.19", only: [:dev, :release], optional: true, runtime: false}
+      {:ex_doc, "~> 0.19", only: [:dev, :release], optional: true, runtime: false},
+      {:dialyxir, "~> 1.1", only: [:dev], runtime: false, optional: true}
     ]
   end
 
