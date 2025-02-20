@@ -1,7 +1,7 @@
 defmodule Unicode.Guards.MixProject do
   use Mix.Project
 
-  @version "1.0.0"
+  @version "1.0.1"
 
   def project do
     [
@@ -30,7 +30,7 @@ defmodule Unicode.Guards.MixProject do
   defp package do
     [
       maintainers: ["Kip Cole"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       logo: "logo.png",
       links: links(),
       files: [
