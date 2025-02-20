@@ -155,8 +155,11 @@ defmodule Unicode.Guards do
 
   @doc false
   # Replaced by `is_graph/1`.
-  defguard is_visible(codepoint)
-           when is_integer(codepoint) and match?(codepoint, "[[:visible:]]")
+  defmacro is_visible(codepoint) do
+    quote generated: true, location: :keep do
+      is_integer(unquote(codepoint)) and match?(unquote(codepoint), "[[:visible:]]")
+    end
+  end
 
   @doc """
   Guards whether a UTF8 codepoint is a graphic character.
@@ -166,8 +169,11 @@ defmodule Unicode.Guards do
   non-space, non-control and non-surrogate.
 
   """
-  defguard is_graph(codepoint)
-           when is_integer(codepoint) and match?(codepoint, "[[:graph:]]")
+  defmacro is_graph(codepoint) do
+    quote generated: true, location: :keep do
+      is_integer(unquote(codepoint)) and match?(unquote(codepoint), "[[:graph:]]")
+    end
+  end
 
   @doc """
   Guards whether a UTF8 codepoint is a space character.
@@ -187,6 +193,9 @@ defmodule Unicode.Guards do
   `[:graph:]` set and the `[:blank:]` set.
 
   """
-  defguard is_print(codepoint)
-           when is_integer(codepoint) and match?(codepoint, "[[:print:]]")
+  defmacro is_print(codepoint) do
+    quote generated: true, location: :keep do
+      is_integer(unquote(codepoint)) and match?(unquote(codepoint), "[[:print:]]")
+    end
+  end
 end
