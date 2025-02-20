@@ -1,0 +1,49 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Elixir CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    name: OTP ${{matrix.pair.otp}} / Elixir ${{matrix.pair.elixir}}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - pair:
+              otp: 25
+              elixir: 1.14
+          - pair:
+              otp: 27
+              elixir: 1.18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-elixir@v1
+        with:
+          otp-version: ${{matrix.pair.otp}}
+          elixir-version: ${{matrix.pair.elixir}}
+      - name: Dependencies Cache
+        uses: actions/cache@v3
+        with:
+          path: deps
+          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+          restore-keys: ${{ runner.os }}-mix-
+      - name: Install Dependencies
+        run: mix deps.get
+      - name: Test
+        run: mix test
