@@ -1,5 +1,13 @@
 # Changelog
 
+## Unicode Guards v1.0.1
+
+This is the changelog for Unicode Guards v1.0.1 released on February 21st, 2025.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
+
+### Bug Fixes
+
+* Use `defmacro` instead of `defguard` for some guards to avoid implementation limits on OTP 27. Issue to be explored further upstream with Elixir and OTP. THanks to @vlemann for the PR, greatly appreciated. Closes #9.
+
 ## Unicode Guards v1.0.0
 
 This is the changelog for Unicode Guards v1.0.0 released on September 14th, 2021.  For older changelogs please consult the release tag on [GitHub](https://github.com/elixir-unicode/unicode_guards/tags)
