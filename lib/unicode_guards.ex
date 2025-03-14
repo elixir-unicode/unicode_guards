@@ -74,7 +74,7 @@ defmodule Unicode.Guards do
   Guards whether a UTF8 codepoint is a unicode separator symbol
   character.
 
-  This includes the Unicode set `Zs` plus the characters.
+  This includes the Unicode set `Zs`.
 
   """
   defguard is_separator(codepoint)
